@@ -1,0 +1,5 @@
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\bin\Debug\BL.Restaurante.dll
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\bin\Debug\BL.Restaurante.pdb
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\obj\Debug\BL.Restaurante.csprojResolveAssemblyReference.cache
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\obj\Debug\BL.Restaurante.dll
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\obj\Debug\BL.Restaurante.pdb
