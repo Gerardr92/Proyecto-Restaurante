@@ -55,11 +55,6 @@ namespace Win.Restaurante
             FormAgregar.Show();
         }
 
-        private void cancelarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var FormCancelar = new FormCancelarO();
-            FormCancelar.Show();
-        }
 
         private void estatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -89,6 +84,11 @@ namespace Win.Restaurante
         {
             var FormReporteP = new FormReporteP();
             FormReporteP.show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

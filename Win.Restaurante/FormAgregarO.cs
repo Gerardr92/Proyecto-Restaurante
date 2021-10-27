@@ -77,5 +77,88 @@ namespace Win.Restaurante
         {
 
         }
+
+        private void ordenBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            ordenBindingSource.EndEdit();
+            var orden = (Orden)ordenBindingSource.Current;
+
+            var Resultado = _Ordenes.GuardarOrden(orden);
+
+            if (Resultado.Exitoso == true)
+            {
+                ordenBindingSource.ResetBindings(false);
+                habilitardeshabilitarbotones(true);
+
+            }
+            else
+            {
+                MessageBox.Show(Resultado.Mensaje);
+            }
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            _Ordenes.agregarOrden();
+            ordenBindingSource.MoveLast();
+
+            habilitardeshabilitarbotones(false);
+            
+
+        }
+
+        private void habilitardeshabilitarbotones(bool valor)
+        {
+            bindingNavigatorMoveFirstItem.Enabled = valor;
+            bindingNavigatorMoveLastItem.Enabled = valor;
+            bindingNavigatorMovePreviousItem.Enabled = valor;
+            bindingNavigatorMoveNextItem.Enabled = valor;
+            bindingNavigatorPositionItem.Enabled = valor;
+
+            bindingNavigatorAddNewItem.Enabled = valor;
+            bindingNavigatorDeleteItem.Enabled = valor;
+            toolStripButtonCancelar.Visible = ! valor;
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+           
+            if(idTextBox.Text != "")
+            {
+                var Resultado = MessageBox.Show("Desea Eliminar?", "Eliminar", MessageBoxButtons.YesNo);
+                if (Resultado == DialogResult.Yes)
+                {
+                    var id = Convert.ToInt32(idTextBox.Text);
+                    Eliminar(id);
+                }
+
+            }   
+        }
+
+        private void Eliminar(int id)
+        {
+            
+            var resultado = _Ordenes.eliminarOrden(id);
+
+            if (resultado == true)
+            {
+                ordenBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error al eliminar la orden");
+            }
+        }
+
+        private void toolStripButtonCancelar_Click(object sender, EventArgs e)
+        {
+            habilitardeshabilitarbotones(true);
+            Eliminar(0);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
