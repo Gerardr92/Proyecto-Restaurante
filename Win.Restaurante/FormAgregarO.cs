@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace Win.Restaurante
     public partial class FormAgregarO : Form
     {
         AgOrdenesBL _Ordenes;
+        CategoriasBL _Categorias;
 
         public FormAgregarO()
         {
@@ -21,6 +23,9 @@ namespace Win.Restaurante
 
             _Ordenes = new AgOrdenesBL();
             ordenBindingSource.DataSource = _Ordenes.ObtenerOrdenes();
+            
+            _Categorias = new CategoriasBL();
+            listaCategoriasBindingSource.DataSource = _Categorias.ObtenerCategorias();
         }
 
         private void ordenDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -82,6 +87,16 @@ namespace Win.Restaurante
         {
             ordenBindingSource.EndEdit();
             var orden = (Orden)ordenBindingSource.Current;
+
+
+            if(fotoPictureBox.Image != null)
+            {
+                orden.foto = Program.imagetobytearray(fotoPictureBox.Image);
+            }
+            else
+            {
+                orden.foto = null;
+            }
 
             var Resultado = _Ordenes.GuardarOrden(orden);
 
@@ -157,6 +172,51 @@ namespace Win.Restaurante
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormAgregarO_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            var orden = (Orden)ordenBindingSource.Current;
+
+            if(orden != null)
+            {
+                openFileDialog1.ShowDialog();
+                var archivo = openFileDialog1.FileName;
+
+                if (archivo != "")
+                {
+                    var fileInfo = new FileInfo(archivo);
+                    var fileStream = fileInfo.OpenRead();
+
+                    fotoPictureBox.Image = Image.FromStream(fileStream);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cree una orden antes de asignar imagen");
+            }
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fotoPictureBox.Image = null;
+        }
+
+        private void categoriaIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaCategoriasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

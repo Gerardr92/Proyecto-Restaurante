@@ -34,8 +34,9 @@
             System.Windows.Forms.Label existenciaLabel;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label precioLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAgregarO));
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label categoriaIDLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAgregarO));
             this.ordenBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.ordenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -57,21 +58,30 @@
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.precioTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.listaCategoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriaIDComboBox = new System.Windows.Forms.ComboBox();
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             precioLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            categoriaIDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ordenBindingNavigator)).BeginInit();
             this.ordenBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCategoriasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(398, 45);
+            activoLabel.Location = new System.Drawing.Point(24, 288);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 1;
@@ -91,7 +101,7 @@
             // existenciaLabel
             // 
             existenciaLabel.AutoSize = true;
-            existenciaLabel.Location = new System.Drawing.Point(25, 142);
+            existenciaLabel.Location = new System.Drawing.Point(24, 171);
             existenciaLabel.Name = "existenciaLabel";
             existenciaLabel.Size = new System.Drawing.Size(58, 13);
             existenciaLabel.TabIndex = 5;
@@ -111,12 +121,31 @@
             // precioLabel
             // 
             precioLabel.AutoSize = true;
-            precioLabel.Location = new System.Drawing.Point(25, 110);
+            precioLabel.Location = new System.Drawing.Point(24, 139);
             precioLabel.Name = "precioLabel";
             precioLabel.Size = new System.Drawing.Size(40, 13);
             precioLabel.TabIndex = 9;
             precioLabel.Text = "Precio:";
             precioLabel.Click += new System.EventHandler(this.precioLabel_Click);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(24, 217);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(131, 13);
+            label1.TabIndex = 12;
+            label1.Text = "Observaciones de pedido:";
+            label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // categoriaIDLabel
+            // 
+            categoriaIDLabel.AutoSize = true;
+            categoriaIDLabel.Location = new System.Drawing.Point(24, 107);
+            categoriaIDLabel.Name = "categoriaIDLabel";
+            categoriaIDLabel.Size = new System.Drawing.Size(55, 13);
+            categoriaIDLabel.TabIndex = 16;
+            categoriaIDLabel.Text = "Categoria:";
             // 
             // ordenBindingNavigator
             // 
@@ -145,7 +174,7 @@
             this.ordenBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.ordenBindingNavigator.Name = "ordenBindingNavigator";
             this.ordenBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.ordenBindingNavigator.Size = new System.Drawing.Size(513, 25);
+            this.ordenBindingNavigator.Size = new System.Drawing.Size(790, 25);
             this.ordenBindingNavigator.TabIndex = 0;
             this.ordenBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -262,9 +291,9 @@
             // activoCheckBox
             // 
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.ordenBindingSource, "activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(468, 40);
+            this.activoCheckBox.Location = new System.Drawing.Point(81, 284);
             this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.activoCheckBox.Size = new System.Drawing.Size(30, 24);
             this.activoCheckBox.TabIndex = 2;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             this.activoCheckBox.CheckedChanged += new System.EventHandler(this.activoCheckBox_CheckedChanged);
@@ -281,7 +310,7 @@
             // existenciaTextBox
             // 
             this.existenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenBindingSource, "existencia", true));
-            this.existenciaTextBox.Location = new System.Drawing.Point(95, 139);
+            this.existenciaTextBox.Location = new System.Drawing.Point(94, 168);
             this.existenciaTextBox.Name = "existenciaTextBox";
             this.existenciaTextBox.Size = new System.Drawing.Size(74, 20);
             this.existenciaTextBox.TabIndex = 6;
@@ -300,7 +329,7 @@
             // precioTextBox
             // 
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenBindingSource, "precio", true));
-            this.precioTextBox.Location = new System.Drawing.Point(95, 107);
+            this.precioTextBox.Location = new System.Drawing.Point(94, 136);
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.Size = new System.Drawing.Size(104, 20);
             this.precioTextBox.TabIndex = 10;
@@ -308,27 +337,74 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(162, 175);
+            this.textBox1.Location = new System.Drawing.Point(161, 204);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(240, 51);
             this.textBox1.TabIndex = 11;
             // 
-            // label1
+            // fotoPictureBox
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(25, 188);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(131, 13);
-            label1.TabIndex = 12;
-            label1.Text = "Observaciones de pedido:";
-            label1.Click += new System.EventHandler(this.label1_Click);
+            this.fotoPictureBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.ordenBindingSource, "foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.fotoPictureBox.Location = new System.Drawing.Point(455, 12);
+            this.fotoPictureBox.Name = "fotoPictureBox";
+            this.fotoPictureBox.Size = new System.Drawing.Size(284, 191);
+            this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fotoPictureBox.TabIndex = 14;
+            this.fotoPictureBox.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(504, 217);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Agregar foto";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(622, 217);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Eliminar foto";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "jpg, png | *.jpg; *.png";
+            // 
+            // listaCategoriasBindingSource
+            // 
+            this.listaCategoriasBindingSource.DataSource = typeof(BL.Restaurante.Categoria);
+            // 
+            // categoriaIDComboBox
+            // 
+            this.categoriaIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ordenBindingSource, "CategoriaID", true));
+            this.categoriaIDComboBox.DataSource = this.listaCategoriasBindingSource;
+            this.categoriaIDComboBox.DisplayMember = "Descripcion";
+            this.categoriaIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoriaIDComboBox.FormattingEnabled = true;
+            this.categoriaIDComboBox.Location = new System.Drawing.Point(94, 104);
+            this.categoriaIDComboBox.Name = "categoriaIDComboBox";
+            this.categoriaIDComboBox.Size = new System.Drawing.Size(133, 21);
+            this.categoriaIDComboBox.TabIndex = 17;
+            this.categoriaIDComboBox.ValueMember = "ID";
             // 
             // FormAgregarO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 309);
+            this.ClientSize = new System.Drawing.Size(790, 333);
+            this.Controls.Add(categoriaIDLabel);
+            this.Controls.Add(this.categoriaIDComboBox);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.fotoPictureBox);
             this.Controls.Add(label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(activoLabel);
@@ -344,10 +420,13 @@
             this.Controls.Add(this.ordenBindingNavigator);
             this.Name = "FormAgregarO";
             this.Text = "Agregar Orden";
+            this.Load += new System.EventHandler(this.FormAgregarO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ordenBindingNavigator)).EndInit();
             this.ordenBindingNavigator.ResumeLayout(false);
             this.ordenBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCategoriasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,5 +455,11 @@
         private System.Windows.Forms.TextBox precioTextBox;
         private System.Windows.Forms.ToolStripTextBox toolStripButtonCancelar;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox fotoPictureBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.BindingSource listaCategoriasBindingSource;
+        private System.Windows.Forms.ComboBox categoriaIDComboBox;
     }
 }
