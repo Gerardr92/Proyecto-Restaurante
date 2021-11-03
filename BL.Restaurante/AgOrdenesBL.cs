@@ -83,7 +83,13 @@ namespace BL.Restaurante
                 Resultado.Exitoso = false;
             }
 
-            if (orden.precio < 0)
+            if (orden.CategoriaID == 0)
+            {
+                Resultado.Mensaje = "Ingrese una categoria";
+                Resultado.Exitoso = false;
+            }
+
+                if (orden.precio < 0)
             {
                 Resultado.Mensaje = "El precio debe ser mayor a cero";
                 Resultado.Exitoso = false;
@@ -101,6 +107,9 @@ namespace BL.Restaurante
         public string descripcion { get; set; }
         public double precio { get; set; }
         public int existencia { get; set; }
+        public int CategoriaID { get; set; }
+        public Categoria categoria { get; set; }
+        public byte[] foto { get; set; }
         public bool activo { get; set; }
         public string observaciones { get; set; }
     }
