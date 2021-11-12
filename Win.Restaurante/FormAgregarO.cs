@@ -14,14 +14,14 @@ namespace Win.Restaurante
 {
     public partial class FormAgregarO : Form
     {
-        AgOrdenesBL _Ordenes;
+        OrdenesBL _Ordenes;
         CategoriasBL _Categorias;
 
         public FormAgregarO()
         {
             InitializeComponent();
 
-            _Ordenes = new AgOrdenesBL();
+            _Ordenes = new OrdenesBL();
             ordenBindingSource.DataSource = _Ordenes.ObtenerOrdenes();
             
             _Categorias = new CategoriasBL();
@@ -217,6 +217,11 @@ namespace Win.Restaurante
         }
 
         private void listaCategoriasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void categoriaIDComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

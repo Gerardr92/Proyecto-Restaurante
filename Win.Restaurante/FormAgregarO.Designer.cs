@@ -394,6 +394,7 @@
             this.categoriaIDComboBox.Size = new System.Drawing.Size(133, 21);
             this.categoriaIDComboBox.TabIndex = 17;
             this.categoriaIDComboBox.ValueMember = "ID";
+            this.categoriaIDComboBox.SelectedIndexChanged += new System.EventHandler(this.categoriaIDComboBox_SelectedIndexChanged_1);
             // 
             // FormAgregarO
             // 

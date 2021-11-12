@@ -90,5 +90,22 @@ namespace Win.Restaurante
         {
 
         }
+
+        private void seguridadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var FormAgregar = new FormAgregarO();
+            FormAgregar.Show();
+        }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formFactura = new FormFactura();
+            formFactura.Show();
+        }
     }
 }
