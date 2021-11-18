@@ -1,0 +1,20 @@
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\bin\Debug\BL.Restaurante.dll
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\bin\Debug\BL.Restaurante.pdb
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\obj\Debug\BL.Restaurante.csprojResolveAssemblyReference.cache
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\obj\Debug\BL.Restaurante.dll
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\obj\Debug\BL.Restaurante.pdb
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\bin\Debug\BL.Restaurante.dll.config
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\bin\Debug\EntityFramework.dll
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\bin\Debug\EntityFramework.SqlServer.dll
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\bin\Debug\EntityFramework.xml
+C:\ProyectoRestaurante\Restaurante\BL.Restaurante\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Reyna Valladares\Desktop\Restaurante\BL.Restaurante\bin\Debug\BL.Restaurante.dll.config
+C:\Users\Reyna Valladares\Desktop\Restaurante\BL.Restaurante\bin\Debug\BL.Restaurante.dll
+C:\Users\Reyna Valladares\Desktop\Restaurante\BL.Restaurante\bin\Debug\BL.Restaurante.pdb
+C:\Users\Reyna Valladares\Desktop\Restaurante\BL.Restaurante\bin\Debug\EntityFramework.dll
+C:\Users\Reyna Valladares\Desktop\Restaurante\BL.Restaurante\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Reyna Valladares\Desktop\Restaurante\BL.Restaurante\bin\Debug\EntityFramework.xml
+C:\Users\Reyna Valladares\Desktop\Restaurante\BL.Restaurante\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Reyna Valladares\Desktop\Restaurante\BL.Restaurante\obj\Debug\BL.Restaurante.csprojResolveAssemblyReference.cache
+C:\Users\Reyna Valladares\Desktop\Restaurante\BL.Restaurante\obj\Debug\BL.Restaurante.dll
+C:\Users\Reyna Valladares\Desktop\Restaurante\BL.Restaurante\obj\Debug\BL.Restaurante.pdb
