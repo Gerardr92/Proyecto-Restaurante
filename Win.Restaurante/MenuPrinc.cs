@@ -68,24 +68,6 @@ namespace Win.Restaurante
             FormEliminarP.Show();
         }
 
-        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            var FormReporteV = new FormReporteV();
-            FormReporteV.Show();
-        }
-
-        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var FormReporteC = new FormReporteC();
-            FormReporteC.Show();
-        }
-
-        private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var FormReporteP = new FormReporteP();
-            FormReporteP.show();
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -106,6 +88,24 @@ namespace Win.Restaurante
         {
             var formFactura = new FormFactura();
             formFactura.Show();
+        }
+
+        private void reporteOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formreporteordenes = new FormReporteOrdenes();
+            formreporteordenes.Show();
+        }
+
+        private void reporteFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formreportefacturas = new FormReporteFactura();
+            formreportefacturas.Show();
+        }
+
+        private void reporteVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formreporteventas = new FormReporteVentas();
+            formreporteventas.Show();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +36,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +65,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormReporteFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteFactura.Designer.cs">
+      <DependentUpon>FormReporteFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReporteOrdenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteOrdenes.Designer.cs">
+      <DependentUpon>FormReporteOrdenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteVentas.Designer.cs">
+      <DependentUpon>FormReporteVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteFacturas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteFacturas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReporteOrdenes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteOrdenes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormAgregarO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,17 +112,17 @@
     <Compile Include="FormAgregarP.Designer.cs">
       <DependentUpon>FormAgregarP.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCancelarO.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCancelarO.Designer.cs">
-      <DependentUpon>FormCancelarO.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormEliminarP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormEliminarP.Designer.cs">
       <DependentUpon>FormEliminarP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFactura.Designer.cs">
+      <DependentUpon>FormFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -82,24 +136,6 @@
     <Compile Include="FormEstadoO.Designer.cs">
       <DependentUpon>FormEstadoO.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReporteC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReporteC.Designer.cs">
-      <DependentUpon>FormReporteC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormReporteP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReporteP.Designer.cs">
-      <DependentUpon>FormReporteP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormReporteV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReporteV.Designer.cs">
-      <DependentUpon>FormReporteV.cs</DependentUpon>
-    </Compile>
     <Compile Include="MenuPrinc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,14 +144,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteVentas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteVentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="FormReporteFactura.resx">
+      <DependentUpon>FormReporteFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteOrdenes.resx">
+      <DependentUpon>FormReporteOrdenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteVentas.resx">
+      <DependentUpon>FormReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteFacturas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteFacturas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteOrdenes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteOrdenes.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAgregarO.resx">
       <DependentUpon>FormAgregarO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAgregarP.resx">
       <DependentUpon>FormAgregarP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCancelarO.resx">
-      <DependentUpon>FormCancelarO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEliminarP.resx">
       <DependentUpon>FormEliminarP.cs</DependentUpon>
@@ -123,17 +179,11 @@
     <EmbeddedResource Include="FormEstadoO.resx">
       <DependentUpon>FormEstadoO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFactura.resx">
+      <DependentUpon>FormFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReporteC.resx">
-      <DependentUpon>FormReporteC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReporteP.resx">
-      <DependentUpon>FormReporteP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReporteV.resx">
-      <DependentUpon>FormReporteV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrinc.resx">
       <DependentUpon>MenuPrinc.cs</DependentUpon>
@@ -146,8 +196,27 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReporteVentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteVentas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.Restaurante.AgOrdenesBL.datasource" />
+    <None Include="Properties\DataSources\BL.Restaurante.CategoriasBL.datasource" />
+    <None Include="Properties\DataSources\BL.Restaurante.FacturaBL.datasource" />
     <None Include="Properties\DataSources\BL.Restaurante.Orden.datasource" />
     <None Include="Properties\DataSources\BL.Restaurante.SeguridadBL.datasource" />
     <None Include="Properties\Settings.settings">
@@ -169,7 +238,27 @@
       <Name>BL.Restaurante</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fridays-hamburguesa-con-alitas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo oficial-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-computer-security-computer-icons-password-internet-security-others-logo-malware.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
