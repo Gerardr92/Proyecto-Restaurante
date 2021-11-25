@@ -12,6 +12,13 @@ namespace BL.Restaurante
         protected override void Seed(Contexto contexto)
         {
 
+            var usuarioAdmin = new SeguridadBL.usuario();
+            usuarioAdmin.Nombre = "admin1";
+            usuarioAdmin.Contrasena = "1234";
+
+            contexto.Usuarios.Add(usuarioAdmin);
+
+
             var categoria1 = new Categoria();
             categoria1.Descripcion = "Entradas";
             contexto.Categorias.Add(categoria1);
